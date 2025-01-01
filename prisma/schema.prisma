@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model FloodReport {
+  id           Int      @id @default(autoincrement())
+  reporterName String
+  phoneNumber  String
+  address      String
+  floodStatus  String
+  imagePath    String?  // เก็บ path ของรูป
+  createdAt    DateTime @default(now())
+}
+
+model HelpRequest {
+  id              Int      @id @default(autoincrement())
+  reporterName    String
+  phoneNumber     String
+  address         String
+  helpTypes       String   // เก็บ JSON String
+  urgencyLevel    String
+  additionalDetails String?
+  createdAt       DateTime @default(now())
+}
+
+model DamageReport {
+  id                Int      @id @default(autoincrement())
+  reporterName      String
+  phoneNumber       String
+  address           String
+  additionalDetails String?
+  assessmentDate    DateTime
+  damageList        String
+  propertyDamage    Float
+  lifeImpact        String?
+  additionalNotes   String?
+  createdAt         DateTime @default(now())
+}

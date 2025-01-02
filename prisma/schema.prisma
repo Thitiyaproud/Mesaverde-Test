@@ -39,7 +39,6 @@ model DamageReport {
   reporterName      String
   phoneNumber       String
   address           String
-  additionalDetails String?
   assessmentDate    DateTime
   damageList        String
   propertyDamage    Float

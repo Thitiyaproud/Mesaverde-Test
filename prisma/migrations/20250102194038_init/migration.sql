@@ -31,7 +31,6 @@ CREATE TABLE `DamageReport` (
     `reporterName` VARCHAR(191) NOT NULL,
     `phoneNumber` VARCHAR(191) NOT NULL,
     `address` VARCHAR(191) NOT NULL,
-    `additionalDetails` VARCHAR(191) NULL,
     `assessmentDate` DATETIME(3) NOT NULL,
     `damageList` VARCHAR(191) NOT NULL,
     `propertyDamage` DOUBLE NOT NULL,
